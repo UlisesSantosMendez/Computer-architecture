@@ -1,0 +1,149 @@
+lw = load word
+li = load immediate (mueve imm a el registro rdest)
+La columna derecha de la ventana principal son las pseudoinstrucciones
+La columna central estan las instrucciones
+La columna izquierda estan las instrucciones en hexadecimal
+
+
+Ejecutar en modo paso a paso, no se acepta de una corrida 
+
+///////////////////////////////////////////////////////////////
+EXPLICACION HELLO WORLD
+***************************************************************
+Se inicializan los encabezados
+
+lw $4, 0($29)
+el 0($29)  pertenece al offset
+
+el registro 29 corresponde al apuntador hacia la pila
+
+addiu es una suma inmediata que se suma con el registro 29 
+addiu $5, $29, 4 significa que se le suma un 4
+addiu $6, $6, 4
+El servicio 4 es para imprimir cadenas
+El servicio numero 10 nos ayuda a salir del programa
+Para que el sistema entienda el paso de servicio debes pasarlo
+al registro 0 pero a este no se le asigna el valor, a 0 se le suma 10
+y el resultado se almacena en 2 y rl registro 2 es $v0
+
+Cuando se llega a la linea syscall es cuando se ejecuta el servicio 
+
+sll : shift left logical es un desplazamiento a 2 posiciones
+jal: jump all link
+****************************************************************
+.data y .text son directivas y son palabras reservadas, se llaman directivas
+y empiezan con un . 
+li 
+
+///////////////////////////////////////////////////////////////////////////
+EXPLICACION imprimeNumero
+**************************************************************************
+addi -> suma inmediata sin desbordamiento
+//la constante se suma al registro 0 y lo coloca en el registro a0 de paso de argumento
+addi $a0,$0,25 #Valor a escribir en $a0 
+//le carga el servicio 1 al registro 0 y se carga al v0
+   addi $v0,$0,1 #Función 1, print integer 
+//se carga el servicio numero 10 y se ejecuta syscall 
+   syscall #Escribe en consola $a0
+
+   addi $v0, $0, 10   #Funtion 10, exit
+   syscall            #Acaba el programa
+**************************************************************************
+
+/////////////////////////////////////////////////////////////////////////////////
+EXPLICACION suma de dos numeros
+*********************************************************************************
+# Imprimir en consola
+
+main:
+ .text
+   addi $t0,$0,600 #Valor a escribir en $t0
+   addi $t1,$0,800 #Valor a escribir en $t1
+   add $a0,$t1,$t0  #Realiza la suma entre $t1 y $t0
+   addi $v0,$0,1 #Función 1, print integer 
+   syscall #Escribe en consola $a0
+
+   addi $v0, $0, 10   #Funtion 10, exit
+   syscall            #Acaba el programa
+
+
+********************************************************************************
+//////////////////////////////////////////////////////////////////////////////////
+EXPLICACION ImprimeVector
+**********************************************************************************
+      .data            # Zona de datos
+vector: .word 34 28 1
+
+      .text      # Zona de instrucciones
+//Mueve la constante 1 al registro v0 que se usa en dos contextos relacionados
+//como registro de retorno de valores de funciones
+main: li $v0, 1  # Llamada al sistema para print int
+//load word suma el registro del contenido base y el offset
+//y lo que esta ubicado en esa direccion lo bajara el registro 0
+      lw $a0, vector($0)
+//
+//
+      syscall    # Muestra elprimer número en pantalla
+//
+//
+      lw $a0, vector + 4($0)
+//
+//
+      syscall    # Muestra el segundo número en pantalla
+//
+      lw $a0, vector + 8($0)
+      syscall    # Muestra eltercer número en pantalla
+
+
+      li $v0, 10 # Finalizarprograma
+      syscall
+
+Al llegar al jal se hace nop y se guarda en ra
+
+///////////////////////////////////////////////////////////////////////////////////////
+EXPLICACION Serie n menos 1 mas uno
+***************************************************************************************
+.data            # Zona de datos
+vector: .word 1 6
+
+#serie   suma = (n-1)+1: desde n = 1 hasta N
+
+      .text      # Zona de instrucciones
+//la constante 1 se carga en v0 que se utiliza para el paso de parametros en el S.O
+main: li $v0, 1  # Llamada al sistema para print int
+//Se utiliza como registro de inicio el registro 0 y lo carga en a0 la primer palabra del vector en este caso 1
+      lw $a0, vector ($0)
+// la constante 0 se suma con a0 y lo manda al registro s0
+      addi $s0, $a0, 0
+// Imprime el numero inicial 
+      syscall
+// Se le van a agregar 4 a la etiqueta vector para localizar el siguiente elemento del arreglo y se carga en a0
+      lw $a0, vector + 4($0)
+//Se suma la constante 0 con a0 y lo manda al registro s1
+      addi $s1, $a0, 0
+      syscall
+lo que tiene s0 se le suma el servicio 1 para imprimir lo que contiene a0 
+      addi $a0, $s0, 1
+//Imprime el segundo numero 
+      syscall    # Muestra el segundo número en pantalla
+loop: 
+// a s0 se le suma la constante 1 y la guarda en s0
+      addi $s0, $s0, 1
+//a s0 se le suma la constante 0 y la guarda en a0
+      addi $a0, $s0, 0
+//Imprime
+      syscall
+// ble= branch or less than equal
+//compara los dos registros y si se cumple esa condicion salta a loop
+//compara lo que tiene s0 y s1 y si se cumple salta a loop 
+      ble $s0, $s1, loop
+//Se ejecuta el loop
+      syscall
+// Se le pasa el servicio 10 de salida a v0
+      li $v0, 10 # Finalizarprograma
+// se ejecuta
+      syscall
+
+
+
+***************************************************************************************
