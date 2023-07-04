@@ -1,0 +1,172 @@
+<HTML>
+<HEAD><TITLE>Lattice TCL Log</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="pn211011125410"></A><B><U><big>pn211011125410</big></U></B>
+#Start recording tcl command: 10/11/2021 11:06:00
+#Project Location: C:/Users/ESCOM/Documents/AC/2P/word00; Project name: word00
+prj_project new -name "word00" -impl "word0" -dev LCMXO2-7000HE-5TG144C -synthesis "synplify"
+file copy -force -- "C:/Users/ESCOM/Documents/AC/2P/word00/div00.vhdl" "C:/Users/ESCOM/Documents/AC/2P/word00/osc00.vhdl" "C:/Users/ESCOM/Documents/AC/2P/word00/oscint00.vhdl" "C:/Users/ESCOM/Documents/AC/2P/word00/packageosc00.vhdl" "C:/Users/ESCOM/Documents/AC/2P/word00/word0/source"
+prj_src add "C:/Users/ESCOM/Documents/AC/2P/word00/word0/source/div00.vhdl" "C:/Users/ESCOM/Documents/AC/2P/word00/word0/source/osc00.vhdl" "C:/Users/ESCOM/Documents/AC/2P/word00/word0/source/oscint00.vhdl" "C:/Users/ESCOM/Documents/AC/2P/word00/word0/source/packageosc00.vhdl"
+prj_project save
+prj_src remove "C:/Users/ESCOM/Documents/AC/2P/word00/word0/source/div00.vhdl"
+prj_src remove "C:/Users/ESCOM/Documents/AC/2P/word00/word0/source/osc00.vhdl"
+prj_src remove "C:/Users/ESCOM/Documents/AC/2P/word00/word0/source/oscint00.vhdl"
+prj_src remove "C:/Users/ESCOM/Documents/AC/2P/word00/word0/source/packageosc00.vhdl"
+prj_src add "C:/Users/ESCOM/Documents/AC/2P/word00/div00.vhdl" "C:/Users/ESCOM/Documents/AC/2P/word00/osc00.vhdl" "C:/Users/ESCOM/Documents/AC/2P/word00/oscint00.vhdl" "C:/Users/ESCOM/Documents/AC/2P/word00/packageosc00.vhdl"
+#Stop recording: 10/11/2021 12:54:10
+
+
+
+<A name="pn211012095540"></A><B><U><big>pn211012095540</big></U></B>
+#Start recording tcl command: 10/12/2021 08:39:17
+#Project Location: C:/Users/ESCOM/Documents/AC/2P/word00; Project name: word00
+prj_project open "C:/Users/ESCOM/Documents/AC/2P/word00/word00.ldf"
+prj_src add "C:/Users/ESCOM/Documents/AC/2P/word00/contrig00.vhdl"
+prj_src add "C:/Users/ESCOM/Documents/AC/2P/word00/coder00.vhdl"
+#Stop recording: 10/12/2021 09:55:40
+
+
+
+<A name="pn211026013943"></A><B><U><big>pn211026013943</big></U></B>
+#Start recording tcl command: 10/25/2021 22:54:45
+#Project Location: C:/Users/ESCOM/Documents/AC/2P/word00; Project name: word00
+prj_project open "C:/Users/ESCOM/Documents/AC/2P/word00/word00.ldf"
+prj_src add "C:/Users/ESCOM/Documents/AC/2P/word00/word00.vhdl"
+prj_src add "C:/Users/ESCOM/Documents/AC/2P/word00/packageword00.vhdl"
+prj_run Export -impl word0 -task Jedecgen
+prj_run Export -impl word0 -task Jedecgen
+pgr_project save "C:/Users/ESCOM/Documents/AC/2P/word00/word0/word0.xcf"
+prj_src add -exclude "C:/Users/ESCOM/Documents/AC/2P/word00/word0/word0.xcf"
+prj_src enable "C:/Users/ESCOM/Documents/AC/2P/word00/word0/word0.xcf"
+pgr_program run
+prj_run Export -impl word0 -task Jedecgen
+pgr_program run
+prj_run Export -impl word0 -task Jedecgen
+pgr_program run
+pgr_program run
+pgr_project save "C:/Users/ESCOM/Documents/AC/2P/word00/word0/word0.xcf"
+prj_run Export -impl word0 -task Jedecgen
+pgr_program run
+prj_run Export -impl word0 -task Jedecgen
+pgr_program run
+prj_run Export -impl word0 -task Jedecgen
+pgr_program run
+prj_run Export -impl word0 -task Jedecgen
+pgr_project save "C:/Users/ESCOM/Documents/AC/2P/word00/word0/word0.xcf"
+prj_run Export -impl word0 -task Jedecgen
+pgr_project save "C:/Users/ESCOM/Documents/AC/2P/word00/word0/word0.xcf"
+pgr_program run
+pgr_program run
+prj_run Export -impl word0 -task Jedecgen
+pgr_project save "C:/Users/ESCOM/Documents/AC/2P/word00/word0/word0.xcf"
+pgr_program run
+prj_run Export -impl word0 -task Jedecgen
+pgr_project save "C:/Users/ESCOM/Documents/AC/2P/word00/word0/word0.xcf"
+pgr_program run
+pgr_project close
+prj_project save
+prj_project close
+#Stop recording: 10/26/2021 01:39:43
+
+
+
+<A name="pn211026014954"></A><B><U><big>pn211026014954</big></U></B>
+#Start recording tcl command: 10/26/2021 01:45:24
+#Project Location: C:/Users/ESCOM/Documents/AC/2P/word00; Project name: word00
+prj_project open "C:/Users/ESCOM/Documents/AC/2P/word00/word00.ldf"
+prj_project close
+#Stop recording: 10/26/2021 01:49:54
+
+
+
+<A name="pn211026151524"></A><B><U><big>pn211026151524</big></U></B>
+#Start recording tcl command: 10/26/2021 15:12:00
+#Project Location: C:/Users/ESCOM/Documents/AC/2P/word00; Project name: word00
+prj_project open "C:/Users/ESCOM/Documents/AC/2P/word00/word00.ldf"
+#Stop recording: 10/26/2021 15:15:24
+
+
+
+<A name="pn211027071606"></A><B><U><big>pn211027071606</big></U></B>
+#Start recording tcl command: 10/26/2021 23:03:45
+#Project Location: C:/Users/ESCOM/Documents/AC/2P/word00; Project name: word00
+prj_project open "C:/Users/ESCOM/Documents/AC/2P/word00/word00.ldf"
+#Stop recording: 10/27/2021 07:16:06
+
+
+
+<A name="pn211027080714"></A><B><U><big>pn211027080714</big></U></B>
+#Start recording tcl command: 10/27/2021 08:07:09
+#Project Location: C:/Users/ESCOM/Documents/AC/2P/word00; Project name: word00
+prj_project open "C:/Users/ESCOM/Documents/AC/2P/word00/word00.ldf"
+prj_project close
+#Stop recording: 10/27/2021 08:07:15
+
+
+
+<A name="pn211029030822"></A><B><U><big>pn211029030822</big></U></B>
+#Start recording tcl command: 10/28/2021 16:03:42
+#Project Location: C:/Users/ESCOM/Documents/AC/2P/word00; Project name: word00
+prj_project open "C:/Users/ESCOM/Documents/AC/2P/word00/word00.ldf"
+#Stop recording: 10/29/2021 03:08:22
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>
