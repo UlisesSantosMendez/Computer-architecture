@@ -1,0 +1,10 @@
+para generar el pipeline se generara una maquina de estado una para ver que se está ejecutando el pipeline 
+
+Relacion de Tareas 3er parical
+Tarea 01
+
+1. Diseñar el automata que detecte la secuencia "0001". El primer bit que entra es el mas significativo. Por el modelo de MOORE
+
+A) Diagrama de transicion de estados
+B) Codificacion de los estados
+C) Tablas de transicion de los estados
