@@ -1,0 +1,23 @@
+# Reading pref.tcl
+# do {D:/SEXTO SEMESTRE/Arquitectura de computadoras/Practicas/3CM12-Arquitectura de computadoras-1er_parcial/sim-and00/andTB00/andTB00.mdo}
+# Loading project andTB00
+# Model Technology ModelSim - Lattice FPGA Edition vcom 2020.3 Compiler 2020.10 Oct 14 2020
+# Start time: 11:50:46 on Sep 05,2022
+# vcom -reportprogress 300 -work work D:/SEXTO SEMESTRE/Arquitectura de computadoras/Practicas/3CM12-Arquitectura de computadoras-1er_parcial/sim-and00/and00.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Error: D:/SEXTO SEMESTRE/Arquitectura de computadoras/Practicas/3CM12-Arquitectura de computadoras-1er_parcial/sim-and00/and00.vhdl(3): (vcom-1598) Library "lattice" not found.
+# ** Error: D:/SEXTO SEMESTRE/Arquitectura de computadoras/Practicas/3CM12-Arquitectura de computadoras-1er_parcial/sim-and00/and00.vhdl(4): (vcom-1136) Unknown identifier "lattice".
+# ** Note: D:/SEXTO SEMESTRE/Arquitectura de computadoras/Practicas/3CM12-Arquitectura de computadoras-1er_parcial/sim-and00/and00.vhdl(6): VHDL Compiler exiting
+# End time: 11:50:46 on Sep 05,2022, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/lscc/diamond/3.12/modeltech/win32loem/vcom failed.
+# Error in macro D:\SEXTO SEMESTRE\Arquitectura de computadoras\Practicas\3CM12-Arquitectura de computadoras-1er_parcial\sim-and00\andTB00\andTB00.mdo line 13
+# C:/lscc/diamond/3.12/modeltech/win32loem/vcom failed.
+#     while executing
+# "vcom -work work "D:/SEXTO SEMESTRE/Arquitectura de computadoras/Practicas/3CM12-Arquitectura de computadoras-1er_parcial/sim-and00/and00.vhdl""
+#     invoked from within
+# "if {![file exists "D:/SEXTO SEMESTRE/Arquitectura de computadoras/Practicas/3CM12-Arquitectura de computadoras-1er_parcial/sim-and00/andTB00/andTB00.m..."
+# Load canceled
+# Load canceled
