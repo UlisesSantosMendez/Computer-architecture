@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliProject version="3.2" title="fsmmoore00" device="LCMXO2-7000HE-5TG144C" default_implementation="fsmmoore0">
+    <Options/>
+    <Implementation title="fsmmoore0" dir="fsmmoore0" description="fsmmoore0" synthesis="synplify" default_strategy="Strategy1">
+        <Options def_top="fsmmoore00"/>
+        <Source name="../osc00-vhdl/oscint00.vhdl" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="../osc00-vhdl/div00.vhdl" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="../osc00-vhdl/packageosc00.vhdl" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="../osc00-vhdl/osc00.vhdl" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="contRead00.vhdl" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="memrom00.vhdl" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="fsm00.vhdl" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="packagefsm00.vhdl" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="fsmmoore00.vhdl" type="VHDL" type_short="VHDL">
+            <Options top_module="fsmmoore00"/>
+        </Source>
+        <Source name="fsmmoore0/fsmmoore0.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
+        </Source>
+        <Source name="fsmmoore00.lpf" type="Logic Preference" type_short="LPF">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="fsmmoore001.sty"/>
+</BaliProject>
