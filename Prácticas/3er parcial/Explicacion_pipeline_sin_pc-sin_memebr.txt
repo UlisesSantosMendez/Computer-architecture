@@ -1,0 +1,4 @@
+LED VERDE SON LOS ESTADOS DE CADA ETAPA
+LED AZUL SON LAS ETAPAS Y COMO SE RECORREN
+LED AMARILLO BANDERAS DE CADA ETAPA
+LED NARANJA muestra la salida final de la etapa WR (que sera lo que almacene el resultado en memoria)
